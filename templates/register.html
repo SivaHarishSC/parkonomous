@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style1.css">
+    <!-- jQuery -->
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+</head>
+<body>
+    <!-- Video Background Section -->
+    <div id="video-background">
+        <video autoplay loop muted id="bgVideo">
+            <source src="{{url_for('static', filename='images/Media1.mp4')}}" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Main Container for Login Form -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="login_form_wrapper">
+            <!-- Logo container -->
+            <div class="logo-container text-center mb-4">
+                <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo" class="img-fluid">
+            </div>
+
+            <!-- Registration Form -->
+            <form method="POST" action="/register">
+                <h1 class="title">Registration</h1>
+                <div class="login_form_content">
+                    <!-- Username Input -->
+                    <div class="login_content_box mb-3">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <div class="login_content_box--input">
+                            <input type="text" class="login__input form-control" name="name" placeholder=" " required>
+                            <label class="login__label">Username</label>
+                        </div>
+                    </div>
+                    <!-- Password Input -->
+                    <div class="login_content_box mb-3">
+                        <span class="icon"><i class="fas fa-lock"></i></span>
+                        <div class="login_content_box--input">
+                            <input type="password" class="login__input form-control" name="password" placeholder=" " required>
+                            <label class="login__label">Password</label>
+                        </div>
+                    </div>
+                    <!-- Mobile Number Input -->
+                    <div class="login_content_box mb-3">
+                        <span class="icon"><i class="fas fa-mobile-alt"></i></span>
+                        <div class="login_content_box--input">
+                            <input type="text" class="login__input form-control" name="contact" placeholder=" " required>
+                            <label class="login__label">Mobile Number</label>
+                        </div>
+                    </div>
+                    <!-- Vehicle ID Input -->
+                    <div class="login_content_box mb-3">
+                        <span class="icon"><i class="fas fa-car"></i></span>
+                        <div class="login_content_box--input">
+                            <input type="text" class="login__input form-control" name="vehicle_id" placeholder=" " required>
+                            <label class="login__label">Vehicle ID</label>
+                        </div>
+                    </div>
+                    <!-- Form Buttons -->
+                    <div class="form-group">
+                        <input type="submit" class="login-btn btn btn-primary w-100 mb-2" value="Register">
+                        <a href="{{url_for('index')}}" class="login-btn btn btn-secondary w-100">Back to Login</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to disable autocomplete -->
+    <script>
+        $(document).ready(function(){
+            // Disable autocomplete on the form
+            $("form").attr("autocomplete","off");
+        });
+    </script>
+</body

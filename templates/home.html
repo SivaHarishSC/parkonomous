@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkonomous</title>
+    <link rel="stylesheet" href="static/css/style2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="static/images/logo.png" alt="Parkonomous Logo" height="120px" width="350px">
+        </a>
+        
+        <nav class="navbar">
+            <a href="#" style="--i:1" class="active">Home</a>
+            <a href="/service" style="--i:3">Map</a>
+            <a href="/about" style="--i:2">About Us</a>
+            <a href="/login" style="--i:4">Logout</a>
+
+
+        </nav>
+
+        <div class="social-media">
+            <a href="#" style="--i:1"><i class='bx bxl-twitter'></i></a>
+            <a href="#" style="--i:2"><i class='bx bxl-facebook'></i></a>
+            <a href="#" style="--i:3"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Journey Towards Sustainability</h1>
+            <p>Experience the future of urban mobility with Parkonomous, where technology and sustainability converge to shape a smarter, greener world.</p>
+
+            <!-- Form to send retrieval request -->
+            <form action="{{ url_for('run_ros2_node') }}" method="post" onsubmit="showMessage(event)">
+                <button class="btn" type="submit" id="requestButton">Send Retrieval Request</button>
+            </form>
+
+            <!-- Message popup when form is submitted -->
+            <div id="message" class="message-popup">
+                <div class="message-content">
+                    <div class="message-icon">&#9432;</div>
+                    <h2>User location is shared!</h2>
+                    <p>Thank You!</p>
+                    <button onclick="closeMessage()">OK</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Image section with a rhombus shape -->
+        <div class="home-img">
+            <div class="rhombus">
+                <img src="static/images/car3.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <script>
+            function showMessage(event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
+
+        // Show the custom message
+        var messageDiv = document.getElementById('message');
+        messageDiv.classList.add('active');
+
+        // Submit the form after showing the message
+        setTimeout(function() {
+            event.target.submit();
+        }, 15000); 
+    }
+
+    function closeMessage() {
+        var messageDiv = document.getElementById('message');
+        messageDiv.classList.remove('active');
+    }
+
+    </script>
+</body>
+</html>

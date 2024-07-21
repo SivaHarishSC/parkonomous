@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="static/css/style4.css"> <!-- Link to your custom CSS -->
+</head>
+<body>
+    <!-- Background Animation Section -->
+    <div class="bgAnimation">
+        <!-- Create colored circles for background animation -->
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Parkonomous Logo" height="120px" width="350px">
+        </a>
+        <!-- Navigation Links -->
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/" class="active">About Us</a> <!-- Active link for current page -->
+            <a href="/service">Map</a>
+            <a href="/login">Logout</a>
+        </nav>
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content - About Section -->
+    <div class="container">
+        <h1>About us</h1>
+        <p>
+            Welcome to Parkonomous, where convenience meets innovation. Our autonomous vehicle technology ensures that your car is retrieved efficiently at mall entrances, saving you time and effort.
+        </p>
+        <h2>
+            Experience the future of retrieval with Parkonomous.
+        </h2>
+    </div>
+</body>
+</html>

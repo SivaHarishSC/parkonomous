@@ -1,0 +1,295 @@
+/* Login Page */
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+#video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 30%;
+    max-width: 400px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 5px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0.95;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+
+.login-btn {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    height: 90px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Times new roman";
+    font-size:large;
+
+}
+a {
+    text-decoration: none;
+    
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+/* ION-ICON RESET */
+ion-icon {
+    --ionicon-stroke-width: 40px;
+    font-size: 24px;
+}
+
+/* BACKGROUND-IMAGE WRAPPER */
+.background_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.background_wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.88);
+    z-index: -1;
+}
+/* LOGIN-FORM */
+.login_form_wrapper {
+    z-index: 999;
+    position: relative;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid hsl(0, 0%, 90%);
+    color: hsla(0, 0%, 100%, 0.897);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    padding: 2rem; /* Adjust padding as needed */
+    max-width: 400px; /* Adjust max-width as needed */
+    width: 90%; /* Adjust width as needed */
+    margin-top: 150px; /* Adjust margin-top as needed */
+}
+/* TITLE */
+.title {
+    display: block;
+    text-align: center;
+    font-size:  1.75rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 90%);
+    letter-spacing: 1px;
+}
+/* LOGIN-FORM-CONTENT */
+.login_form_content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+.login_content_box {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+    border-bottom: 2px solid hsl(0, 0%, 90%);
+}
+.login_content_box--input {
+    width: 100%;
+    position: relative;
+}
+
+
+/* LOGIN-INPUT */
+.login__input {
+    width: 100%;
+    padding-block: 0.8rem;
+    background-color: transparent;
+    color: hsl(0, 0%, 90%);
+    position: relative;
+    z-index: 1;
+    font-size: 1.125rem;
+}
+
+/* LOGIN-LABEL */
+.login__label {
+    position: absolute;
+    left: 0;
+    top: 13px; /* Initial position */
+    font-weight: 400;
+    transition: top 0.3s, font-weight 0.3s; /* Transition properties */
+}
+
+/* Apply the transition effect when the input field is focused */
+.login__input:focus + .login__label {
+    top: -12px; /* Move the label upwards */
+    font-weight: 500; /* Make the label font weight bold */
+}
+
+/* LOGIN-LABEL */
+.login__label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: 400;
+    transition: top 0.3s, font-weight 0.3s;
+}
+.password--input {
+    padding-right: 1.8rem;
+}
+.password__hidden {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    z-index: 10;
+    cursor: pointer;
+}
+.remember_login,
+.remember_login_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.remember_login {
+    margin-bottom: 1rem;
+    display: flex; 
+    align-items: center
+    
+}
+.remember_login_label {
+    padding-top: 10px;
+}
+.remember_login_content {
+    column-gap: 0.6rem;
+    display: flex; 
+    align-items: center
+}
+.remember_login_input {
+    width: 0.95rem;
+    height: 0.95rem;
+    padding-bottom: 50px;
+}
+.forget__login {
+    color: hsl(0, 0%, 90%);
+}
+.forget__login:hover {
+    text-decoration: underline;
+}
+/* BUTTON LOGIN */
+.button__login {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px; /* Adjust padding to reduce button size */
+    margin: 20px 0; /* Adjust margin as needed */
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 2px; /* Adjust letter spacing as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.button__login:hover {
+    border-radius: 2rem;
+    background: #0056b3;
+    box-shadow: 0 0 5px #0056b3,
+        0 0 25px #0056b3,
+        0 0 50px #0056b3,
+        0 0 200px #0056b3;
+}
+
+
+/* REGISTER LOGIN */
+.register__login {
+    text-align: center;
+}
+.register__login a {
+    color: hsla(61, 98%, 47%, 0.897);
+    font-weight: 500;
+}
+.register__login a:hover {
+    text-decoration: underline;
+}
+/* INPUT FOCUS TRANSITION */
+.login__input:focus + .login__label {
+    top: -12px;
+    font-weight: 500;
+}
+/* STICKY INPUT ON FOCUS WITH TRANSITION */
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+    top: -12px;
+}

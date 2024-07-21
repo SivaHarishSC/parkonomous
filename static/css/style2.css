@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #070000;
+    color: #222;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #3a3838;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #ffecec;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #1743e3;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: .5s;
+    opacity: 0;
+    animation: slideSci .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    border-color: #eaeaea;
+}
+
+.social-media a i {
+    font-size: 24px;
+    color: #eaeaea;
+    transform: rotate(-45deg);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 8% 0;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 630px;
+    color: #eaeaea;
+}
+
+.home-content h1 {
+    font-size: 80px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+.home-content p {
+    font-size: 24px;
+    margin: 15px 0 30px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 28px;
+    background: #1743e3;
+    border: 2px solid #1743e3;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 20px;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    width: 250px;
+    height: 100px;
+    position: fixed;
+    left: 250px; 
+}
+
+.btn:hover {
+    background: transparent;
+    color: #1743e3;
+}
+
+.home-img {
+    position: relative;
+    right: -7%;
+    width: 350px;
+    height: 350px;
+    transform: rotate(45deg);
+}
+
+.home-img .rhombus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #eaeaea;
+    border: 25px solid #1743e3;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-img .rhombus img {
+    position: absolute;
+    top: -180px; /* Start the image off-screen */
+    left: -310px; /* Adjust starting position */
+    max-width: 700px;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 2s;
+}
+.message-popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8); /* Reduced background opacity */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #333;
+    text-align: center;
+    z-index: 2000;
+    width: 480px;
+    height: 480px; 
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+.message-popup.active {
+    display: block;
+}
+
+.message-content {
+    padding: 20px;
+}
+
+.message-icon {
+    font-size: 60px; 
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 55px;
+}
+
+p {
+    font-size:80px;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideSci {
+    0% {
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateX(0px) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes car {
+    0% {
+        transform: translate(200px, -200px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rhombus2 {
+    0% {
+        right: -40%;
+        opacity: 0;
+    }
+    
+    100% {
+        right: -25%;
+        opacity: 1;
+    }
+}

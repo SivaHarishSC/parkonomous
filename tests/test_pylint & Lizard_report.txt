@@ -1,0 +1,37 @@
+#Pylint Report
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.43/10, +0.57)
+
+
+# Lizard Report
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       5      1     55      1       5 __init__@35-39@app.py
+       4      1     50      1       7 pose_callback@42-48@app.py
+       4      1     50      1       7 user_callback@51-57@app.py
+       2      1     20      1       5 destination_callback@60-64@app.py
+       6      1     31      0       9 ros_thread@66-74@app.py
+       3      2     29      0       6 start_ros_node@76-81@app.py
+       2      1     12      0       5 get_db_connection@83-87@app.py
+       2      1     10      0       5 index@90-94@app.py
+      18      4    139      0      21 login@97-117@app.py
+       2      1     10      0       5 home@120-124@app.py
+      22      3    149      0      25 register@127-151@app.py
+       3      1     18      0       6 logout@154-159@app.py
+      10      2     66      0      13 run_ros2_node@162-174@app.py
+       3      1     16      0       6 about@177-182@app.py
+       3      1     13      0       6 service@185-190@app.py
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    127       5.9     1.5       44.5        15     app.py
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       127       5.9     1.5       44.5       15            0      0.00    0.00

@@ -1,0 +1,18 @@
+024-07-19 21:27:49,510 - INFO - Setting up test class
+2024-07-19 21:27:49,511 - INFO - Starting Flask application
+2024-07-19 21:27:49,511 - INFO - Flask application thread started
+2024-07-19 21:27:49,511 - INFO - Setting up test case
+.2024-07-19 21:27:49,512 - INFO - Tearing down test class
+ * Serving Flask app 'app'
+ * Debug mode: off
+2024-07-19 21:27:49,515 - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.242.0.28:5000
+2024-07-19 21:27:49,515 - INFO - Press CTRL+C to quit
+2024-07-19 21:27:50,512 - INFO - Flask application thread joined
+
+----------------------------------------------------------------------
+Ran 1 test in 1.002s
+
+OK

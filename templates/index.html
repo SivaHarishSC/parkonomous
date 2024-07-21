@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Login</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="static/css/style.css">
+     <!-- Font Awesome CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ </head>
+ <body>
+     <div id="video-background">
+         <video autoplay loop muted id="bgVideo">
+             <source src="{{url_for('static', filename='images/Media1.mp4')}}" type="video/mp4">
+         </video>
+     </div>
+ 
+     <div class="login_form_wrapper">
+         <!-- Logo container -->
+         <div class="logo-container">
+             <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo">
+         </div>
+ 
+         <!-- FORM -->
+         <form action="/login" class="login__form" method="POST">
+             <h1 class="title">Login</h1>
+             
+             <div class="login_form_content">
+                 <!-- LOGIN-CONTENT-BOX-1 -->
+                 <div class="login_content_box">
+                     <i class="fas fa-user"></i> <!-- Font Awesome icon for user -->
+                     <div class="login_content_box--input">
+                         <input
+                             type="text"
+                             name="name"
+                             placeholder=" "
+                             class="login__input username--input"
+                             required
+                         />
+                         <label for="username" class="login__label">Username</label>
+                     </div>
+                 </div>
+                 <!-- LOGIN-CONTENT-BOX-2 -->
+                 <div class="login_content_box">
+                     <i class="fas fa-lock"></i> <!-- Font Awesome icon for lock -->
+                     <div class="login_content_box--input">
+                         <input
+                             type="password"
+                             name="password"
+                             placeholder=" "
+                             class="login__input password--input"
+                             required
+                         />
+                         <label for="password" class="login__label">Password</label>
+                     </div>
+                 </div>
+                 <!-- REMEMBER-LOGIN -->
+                 <div class="remember_login">
+                     <div class="remember_login_content">
+                         <input type="checkbox" class="remember_login_input" />
+                         <label for="remember" class="remember_login_label text--sm">Remember me</label>
+                     </div>
+                     <!-- FORGET PASSWORD -->
+                     <a href="#" class="forget__login text--sm">Forget password?</a>
+                 </div>
+ 
+                 <!-- Display Flash Messages -->
+                 {% with messages = get_flashed_messages(with_categories=true) %}
+                     {% if messages %}
+                         {% for category, message in messages %}
+                             <div class="alert alert-{{category}}">{{message}}</div>
+                         {% endfor %}
+                     {% endif %}
+                 {% endwith %}
+ 
+                 <!-- LOGIN BUTTON -->
+                 <button type="submit" class="btn btn-primary button__login">Login</button>
+                 <!-- REGISTER LOGIN -->
+                 <p class="register__login text--sm">
+                     Don't have an account ? <a href="{{ url_for('register') }}">Register</a>
+                 </p>
+             </div>
+         </form>
+     </div>
+ 
+     <!-- Bootstrap JavaScript -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ </html>
+ 

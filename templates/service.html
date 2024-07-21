@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="static/css/style3.css"> <!-- Link to your custom CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to boxicons CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script> <!-- Socket.IO library -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="static/images/logo.png" alt="Parkonomous Logo" height="90px" width="320px">
+        </a>
+        
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/" class="active">Map</a>
+            <a href="/about">About Us</a>
+            <a href="/login">Logout</a>
+        </nav>
+        
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content - Map Container -->
+    <div class="map-container">
+        <div id="map">
+            <div id="car"></div> <!-- Div for displaying car position -->
+            <div id="user"></div> <!-- Div for displaying user position -->
+        </div>
+
+        <!-- Status Container -->
+        <div id="status-container">
+            <div id="destinationStatus" style="background-color: transparent;">
+                Destination Status: Not Reached
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Section -->
+    <script>
+        var socket = io(); // Connect to Socket.IO server
+
+        // Function to set position of the car marker
+        function setCarPosition(x, y) {
+            var xPos = y * 95; // Adjust the scaling factor based on your layout
+            var yPos = x * 105; // Adjust the scaling factor based on your layout
+
+            var car = document.getElementById('car');
+            car.style.left = xPos + 'px';
+            car.style.top = yPos + 'px';
+        }
+
+        // Function to set position of the user marker
+        function setUserPosition(x, y) {
+            var xPos = y * 100; // Adjust the scaling factor based on your layout
+            var yPos = x * 80; // Adjust the scaling factor based on your layout
+
+            var user = document.getElementById('user');
+            user.style.left = xPos + 'px';
+            user.style.top = yPos + 'px';
+        }
+
+        // Initialize positions
+        setCarPosition(0, 0); // Initial position of car marker
+        setUserPosition(0, 0); // Initial position of user marker
+
+        // Socket.IO event listeners
+        socket.on('pose_update', function(data) {
+            setCarPosition(data.x, data.y); // Update car marker position
+        });
+
+        socket.on('user_update', function(data) {
+            setUserPosition(data.x, data.y); // Update user marker position
+        });
+
+        socket.on('destination_reached', function(data) {
+            var statusContainer = document.getElementById('destinationStatus');
+            if (data.reached) {
+                statusContainer.textContent = "Status: Destination Reached";
+            } else {
+                statusContainer.textContent = "Status: Destination Unreached";
+            }
+        });
+    </script>
+</body>
+</html>

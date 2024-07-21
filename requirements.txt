@@ -1,0 +1,5 @@
+Flask==2.3.2
+python-socketio==5.8.0
+pylint==2.17.4
+lizard==1.17.10
+selenium==4.10.0

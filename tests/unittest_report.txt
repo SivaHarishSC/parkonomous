@@ -1,0 +1,44 @@
+2024-07-19 21:15:15,041 - INFO - Database set up
+2024-07-19 21:15:15,041 - INFO - Test environment set up
+2024-07-19 21:15:15,041 - INFO - About page requested
+2024-07-19 21:15:15,043 - INFO - About page test passed
+2024-07-19 21:15:15,043 - INFO - Test environment torn down
+.2024-07-19 21:15:15,043 - INFO - Database set up
+2024-07-19 21:15:15,043 - INFO - Test environment set up
+2024-07-19 21:15:15,045 - INFO - Index page test passed
+2024-07-19 21:15:15,045 - INFO - Test environment torn down
+.2024-07-19 21:15:15,045 - INFO - Database set up
+2024-07-19 21:15:15,045 - INFO - Test environment set up
+2024-07-19 21:15:15,046 - INFO - Login GET test passed
+2024-07-19 21:15:15,046 - INFO - Test environment torn down
+.2024-07-19 21:15:15,046 - INFO - Database set up
+2024-07-19 21:15:15,046 - INFO - Test environment set up
+2024-07-19 21:15:15,046 - WARNING - Username and Password Mismatch for user wronguser
+2024-07-19 21:15:15,047 - INFO - Login POST fail test passed
+2024-07-19 21:15:15,047 - INFO - Test environment torn down
+.2024-07-19 21:15:15,048 - INFO - Database set up
+2024-07-19 21:15:15,048 - INFO - Test environment set up
+2024-07-19 21:15:15,048 - INFO - Login POST success test passed
+2024-07-19 21:15:15,048 - INFO - Test environment torn down
+.2024-07-19 21:15:15,048 - INFO - Database set up
+2024-07-19 21:15:15,048 - INFO - Test environment set up
+2024-07-19 21:15:15,049 - INFO - Logout test passed
+2024-07-19 21:15:15,050 - INFO - Test environment torn down
+.2024-07-19 21:15:15,050 - INFO - Database set up
+2024-07-19 21:15:15,050 - INFO - Test environment set up
+2024-07-19 21:15:15,051 - INFO - Register GET test passed
+2024-07-19 21:15:15,051 - INFO - Test environment torn down
+.2024-07-19 21:15:15,051 - INFO - Database set up
+2024-07-19 21:15:15,051 - INFO - Test environment set up
+2024-07-19 21:15:15,059 - INFO - Record Added Successfully for user testuser
+2024-07-19 21:15:15,061 - INFO - Register POST test passed
+2024-07-19 21:15:15,061 - INFO - Test environment torn down
+.2024-07-19 21:15:15,061 - INFO - Database set up
+2024-07-19 21:15:15,061 - INFO - Test environment set up
+2024-07-19 21:15:15,074 - INFO - Service page test passed
+2024-07-19 21:15:15,074 - INFO - Test environment torn down
+.
+----------------------------------------------------------------------
+Ran 9 tests in 0.036s
+
+OK
